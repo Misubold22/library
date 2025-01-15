@@ -49,3 +49,39 @@ const capitalAndIdeology= new Book(
 );
 
 const myLibrary = [theLayOfTheLand ,theManWithoutQualities,acrossTheRiverAndIntoTheTrees,capitalAndIdeology ];
+
+function showLibrary() {
+  const cardContainer = document.querySelector('.library-shelves');
+  for (let i = 0; i < myLibrary.length; i++) {
+    const AddedCard = createCard(
+      myLibrary[i].title,
+      myLibrary[i].pages,
+      myLibrary[i].author,
+      myLibrary[i].read,
+      myLibrary[i].comment
+    );
+    cardContainer.appendChild(AddedCard);
+    const btn = document.createElement('button');
+    btn.setAttribute('class', 'delete-btn');
+    const img = document.createElement('img');
+    img.setAttribute('class', 'pages-image');
+    img.src ="./images/pages.png"
+    AddedCard.appendChild(img);
+    AddedCard.appendChild(btn);
+  }
+}
+
+document.addEventListener(
+  'DOMContentLoaded',
+  function () {
+    showLibrary();
+    console.log(myLibrary);
+  },
+  false
+);
+
+
+function togglePopup() {
+  const popup = document.getElementById('popupOverlay');
+  popup.classList.toggle('show');
+}
