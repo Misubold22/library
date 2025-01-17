@@ -85,3 +85,49 @@ function togglePopup() {
   const popup = document.getElementById('popupOverlay');
   popup.classList.toggle('show');
 }
+
+function addBookToLibrary() {
+  document.addEventListener('DOMContentLoaded', () => {
+    const cardContainer = document.querySelector('.library-shelves');
+    const form = document.querySelector('.form-container');
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+
+      const NewTitle = form.elements['title'];
+      const NewAuthor = form.elements['author'];
+      const NoPages = form.elements['pages'];
+      const NewRead = form.elements['read'];
+      const NewComment = form.elements['comment'];
+
+      let author = NewAuthor.value;
+      let title = NewTitle.value;
+      let pages = NoPages.value;
+      let read = NewRead.value;
+      let comment = NewComment.value;
+      const bookToAdd = new Book(title, author, pages, read, comment);
+
+      console.log(bookToAdd);
+      console.log(myLibrary);
+
+      const NewCard = createCard(
+        bookToAdd.title,
+        bookToAdd.pages,
+        bookToAdd.author,
+        bookToAdd.read,
+        bookToAdd.comment
+      );
+      cardContainer.appendChild(NewCard);
+      const btn = document.createElement('button');
+      btn.setAttribute('class', 'delete-btn');
+      const img = document.createElement("img");
+      img.src ="./images/pages.png"
+      img.setAttribute('class', 'pages-image');
+      NewCard.appendChild(btn);
+      NewCard.appendChild(img);
+
+      myLibrary.push(bookToAdd);
+      return myLibrary;
+    });
+  });
+}
+addBookToLibrary();
