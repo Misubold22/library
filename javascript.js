@@ -131,3 +131,38 @@ function addBookToLibrary() {
   });
 }
 addBookToLibrary();
+
+function createCard(title, pages, author, read, comment) {
+  const card = document.createElement('div');
+  card.classList.add('cards');
+  card.setAttribute('data-title', title); // Unique identifier
+
+  const cardTitle = document.createElement('p');
+  cardTitle.textContent = title;
+  cardTitle.classList.add("title");
+  card.appendChild(cardTitle);
+
+  const cardPages = document.createElement('p');
+  cardPages.textContent = pages;
+  cardPages.classList.add("pages");
+  card.appendChild(cardPages);
+
+  const cardAuthor = document.createElement('p');
+  cardAuthor.textContent = author;
+  cardAuthor.classList.add("author");
+  card.appendChild(cardAuthor);
+ 
+  const cardRead = document.createElement('p');
+  cardRead.textContent = read;
+  cardRead.classList.add('read');
+  card.appendChild(cardRead);
+ 
+
+  const cardComment = document.createElement('p');
+  cardComment.textContent = comment;
+  cardComment.classList.add('comment');
+  card.appendChild(cardComment);
+
+  //card.style.backgroundColor = `#${ Math.floor(Math.random()*16777215).toString(16)}`;
+  return card;
+}
