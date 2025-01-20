@@ -166,3 +166,18 @@ function createCard(title, pages, author, read, comment) {
   //card.style.backgroundColor = `#${ Math.floor(Math.random()*16777215).toString(16)}`;
   return card;
 }
+
+// Delete Book and Update Library
+document.querySelector('.library-shelves').addEventListener('click', e => {
+  if (e.target.classList.contains('delete-btn')) {
+    const card = e.target.parentElement;
+    const dataValue = card.dataset.title;
+    const index = myLibrary.findIndex(item => item.title === dataValue);
+    if (index > -1) {
+      myLibrary.splice(index, 1);
+      card.remove();
+      console.log(`Item with title "${dataValue}" removed from library.`);
+    }
+    console.log(myLibrary);
+  }
+});
