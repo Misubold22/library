@@ -71,6 +71,15 @@ function showLibrary() {
   }
 }
 
+
+function readStatus(dataValue) {
+  const book = myLibrary.find(item => item.title === dataValue);
+  if (book) {
+    book.Read();
+  }
+}
+
+
 document.addEventListener(
   'DOMContentLoaded',
   function () {
@@ -179,5 +188,19 @@ document.querySelector('.library-shelves').addEventListener('click', e => {
       console.log(`Item with title "${dataValue}" removed from library.`);
     }
     console.log(myLibrary);
+  }
+});
+
+// Handle Read Status Update
+document.querySelector('.library-shelves').addEventListener('click', e => {
+  if (e.target.classList.contains('read')) {
+    const card = e.target.parentElement;
+    const dataValue = card.dataset.title; // Use data-title for identification
+    const book = myLibrary.find(item => item.title === dataValue);
+    if (book) {
+      book.Read();
+      const readElement = card.querySelector('.read');
+      readElement.textContent = 'Read';
+    }
   }
 });
