@@ -12,7 +12,7 @@
 ---
 
 ## Introduction
-The **The Library Management App** is a simple web-based project designed to help users manage their personal book collections. Users can add, view, update, and remove books from their library. The project focuses on DOM manipulation and object-oriented programming in JavaScript to provide a dynamic user experience.
+**The Library Management App** is a simple web-based project designed to help users manage their personal book collections. Users can add, view, update, and remove books from their library. The project focuses on DOM manipulation and object-oriented programming in JavaScript to provide a dynamic user experience.
 ---
 
 ## Features
