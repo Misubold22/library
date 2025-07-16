@@ -26,7 +26,7 @@
       <div class="popup-box">
         <h6 style="color: green;">Add a New Book</h6>
         <form class="form-container">
-          <label class="form-label" for="title">Title:</label>
+          <label class="form-label" for="title" >Title:</label>
           <input class="form-input" 
                  type="text" 
                  placeholder="Enter Book Title" 
@@ -46,15 +46,15 @@
           <input type="number" 
                  id="pages" 
                  name="pages" 
-                 min="1">
+                 min="1"required>
 
           <fieldset>
             <p>
-              <input type="radio" name="read" id="read" value="Read" />
+              <input type="radio" name="read" id="read" value="Read" required/>
               <label class="form-label" for="read">Read</label>
             </p>
             <p>
-              <input type="radio" name="read" id="not-read" value="Not Read" />
+              <input type="radio" name="read" id="not-read" value="Not Read" required/>
               <label class="form-label" for="read">Not Read</label>
             </p>
           </fieldset>
@@ -63,11 +63,11 @@
           <textarea id="comment" name="comment"></textarea>
 
         <div>
-          <button class="btn-submit"  type="submit" onclick="togglePopup()" >Submit</button>
+          <button disabled class="btn-submit"  type="submit" onclick="togglePopup()" >Submit</button>
           
         </form>
         
-        <input type="reset" button class="btn-close-popup" onclick="togglePopup()" value="Cancel">
+          <input type="reset" button class="btn-close-popup" onclick="togglePopup()" value="Cancel">
         </div>
       </div>
     </div>
