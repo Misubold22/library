@@ -1,21 +1,25 @@
-function Book(title, author, pages, read, comment) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages; // Pass the number directly
-  this.read = read;
-  this.comment = comment;
+class Book{
+  constructor(title, author, pages, read, comment){
+    this.title = title;
+    this.author = author;
+    this.pages = pages; // Pass the number directly
+    this.read = read;
+    this.comment = comment;
 
-  this.info = function () {
-    // Return the formatted string
+  }
+ 
+  info() {
     return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}, ${this.comment}`;
-  };
+    
+  }
+
+  setRead(){
+    this.read = 'Read';
+    console.log(`${this.title} status updated to "Read".`);
+  
+  }
 }
 
-Book.prototype.Read = function () {
-  this.read = 'Read';
-  console.log(`${this.title} status updated to "Read".`);
-  console.log(myLibrary)
-};
 
 
 const theManWithoutQualities = new Book(
