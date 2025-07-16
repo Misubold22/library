@@ -159,7 +159,7 @@
 	font-size: 18px;
 	text-wrap: wrap;
   }
-  
+
   .card {
 	display: flex;
 	list-style-type: none;
@@ -300,6 +300,15 @@
   
   input[type="radio"] {
 	margin-right: 0px;
+
+  }
+  input:invalid {
+    outline: red solid 3px;
+  }
+  
+  input[type="radio"]:invalid {
+    outline: 3px solid red ;
+    outline-style: auto
   }
   
   fieldset {
