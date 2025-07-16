@@ -133,6 +133,8 @@ function addBookToLibrary() {
       img.setAttribute('class', 'pages-image');
       NewCard.appendChild(btn);
       NewCard.appendChild(img);
+      form.reset(); // Reset all form data
+      submitBtn.setAttribute('disabled', 'disabled');
 
       myLibrary.push(bookToAdd);
       return myLibrary;
@@ -204,3 +206,17 @@ document.querySelector('.library-shelves').addEventListener('click', e => {
     }
   }
 });
+
+function validateForm(){
+  const submitBtn = document.querySelector('.btn-submit');
+  const form = document.querySelector('.form-container')
+  form.addEventListener("input", (e) => {
+  let formvalid = e.target.form.checkValidity();
+  
+  if (formvalid) {
+    console.log("Input OK…");
+    submitBtn.removeAttribute('disabled');
+  }
+  });
+}
+validateForm()
